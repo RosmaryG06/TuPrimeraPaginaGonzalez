@@ -1,0 +1,43 @@
+# .gitignore for a Django project
+
+# Python __pycache__ and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django DB, media, and static files
+db.sqlite3
+*.sqlite3
+/media
+/staticfiles
+
+# Django migrations (optional, keep if you want to reset easily)
+*/migrations/*.pyc
+*/migrations/__pycache__/
+# Uncomment the next line if you want to ignore migration files
+# */migrations/*.py
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+*.env
+
+# pip
+pip-log.txt
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache
+.pytest_cache/

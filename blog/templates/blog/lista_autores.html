@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block titulo %}Autores registrados{% endblock %}
+{% block content %}
+    <div class="contenido">
+        <h2>Autores registrados</h2>
+        <ul>
+            {% for autor in autores %}
+                <li>{{ autor.name }} - {{ autor.bio }}</li>
+            {% empty %}
+                <li>No hay autores registrados.</li>
+            {% endfor %}
+        </ul>
+{% endblock %}

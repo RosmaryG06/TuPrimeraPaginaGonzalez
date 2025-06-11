@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Listado de Publicaciones{% endblock %}
+{% block content %}
+<h2>Listado de Publicaciones</h2>
+<ul>
+    {% for post in posts %}
+        <li><strong>{{ post.titulo }}</strong> - {{ post.autor }} ({{ post.categoria }})</li>
+    {% empty %}
+        <li>No hay publicaciones.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

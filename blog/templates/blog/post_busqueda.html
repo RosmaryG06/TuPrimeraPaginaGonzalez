@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titulo %}Buscar Post{% endblock %}
+{% block content %}
+<h2>Buscar Publicación por Título</h2>
+<form method="post">
+    {% csrf_token %}
+    Buscar por título: <input type="text" name="query" value="{{ request.POST.query }}">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h3>Resultados:</h3>
+    <ul>
+        {% for post in resultados %}
+            <li>{{ post.titulo }}</li>
+        {% endfor %}
+    </ul>
+{% elif resultados is not none %}
+    <p>No se encontraron publicaciones con ese título.</p>
+{% endif %}
+{% endblock %}

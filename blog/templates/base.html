@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mi Blog{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #333;
+            color: #fff;
+            padding: 12px 20px;
+        }
+        .navbar a {
+            color: #eee;
+            text-decoration: none;
+            margin-right: 16px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        h1, h2 {
+            color: #222;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 10px 0 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="{% url 'home' %}">Inicio</a> |
+        <a href="{% url 'post_lista' %}">Ver Publicaciones</a> |
+        <a href="{% url 'post_nuevo' %}">Nuevo Post</a> |
+        <a href="{% url 'autor_nuevo' %}">Nuevo Autor</a> |
+        <a href="{% url 'categoria_nueva' %}">Nueva Categoría</a> |
+        <a href="{% url 'post_busqueda' %}">Buscar Publicación</a>
+        <a href="{% url 'lista_autores' %}">Ver autores</a>
+<a href="{% url 'lista_categorias' %}">Ver categorías</a>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
